@@ -23,13 +23,19 @@ class Person
      if @middle_name 
      return "#{@first_name} #{@middle_name} #{@last_name}"
      else
-        return "#{@first_name} #{@last_name}"
-       
+     return "#{@first_name} #{@last_name}"
   end 
+end 
+
+  def full_name_with_middle_initial
+    if @middle_name 
+    return "#{@first_name} #{@middle_name[0]} #{@last_name}"
+    else
+    return "#{@first_name} #{@last_name}"
+  end
 end 
    
     # implement your behavior here
-  end
   
   RSpec.describe Person do
     describe "#full_name" do
@@ -42,9 +48,7 @@ end
          person = Person.new(first_name: "Ben", last_name: "Dowsett")
         expect(person.full_name).to eq("Ben Dowsett")
       end 
-    end
-
-  
+    end  
     describe "#full_name_with_middle_initial" do
         it "Method should return a full name with a middle initial." do
           person = Person.new(first_name: "Ben", middle_name: "Robert", last_name: "Dowsett")
@@ -53,7 +57,10 @@ end
       it "If the middle name is missing, there shouldnt be extra spaces or a period" do 
         person = Person.new(first_name: "Ben", last_name: "Dowsett")
         expect(person.full_name_with_middle_initial).to eq("Ben Dowsett") 
-      end 
-    end
+    end 
 end 
+end 
+end 
+
+
    #describe "#initials"

@@ -34,6 +34,11 @@ end
     return "#{@first_name} #{@last_name}"
   end
 end 
+  def initials
+    return "#{@first_name[0]}#{@middle_name[0]}#{@last_name[0]}"
+  end 
+end 
+
    
     # implement your behavior here
   
@@ -62,12 +67,11 @@ end
    describe "#initials" do 
     it "return all initials." do
         person = Person.new(first_name: "Ben", middle_name: "Robert", last_name: "Dowsett")
-        expect(person.initials).to eq("BRC")
+        expect(person.initials).to eq("BRD")
     end 
 end 
-
 end 
-end 
+ 
 
 
    

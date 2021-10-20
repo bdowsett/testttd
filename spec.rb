@@ -35,7 +35,12 @@ end
   end
 end 
   def initials
+    if @middle_name
     return "#{@first_name[0]}#{@middle_name[0]}#{@last_name[0]}"
+    else
+    return "#{@first_name[0]}#{@last_name[0]}"
+    end 
+
   end 
 end 
 
@@ -68,6 +73,10 @@ end
     it "return all initials." do
         person = Person.new(first_name: "Ben", middle_name: "Robert", last_name: "Dowsett")
         expect(person.initials).to eq("BRD")
+    end 
+    it "returns firstname initial and last name initial if no middle name is passed" do
+        person = Person.new(first_name: "Ben", last_name: "Dowsett")
+        expect(person.initials).to eq("BD")
     end 
 end 
 end 

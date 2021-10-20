@@ -58,9 +58,16 @@ end
         person = Person.new(first_name: "Ben", last_name: "Dowsett")
         expect(person.full_name_with_middle_initial).to eq("Ben Dowsett") 
     end 
+   end 
+   describe "#initials" do 
+    it "return all initials." do
+        person = Person.new(first_name: "Ben", middle_name: "Robert", last_name: "Dowsett")
+        expect(person.initials).to eq("BRC")
+    end 
 end 
+
 end 
 end 
 
 
-   #describe "#initials"
+   

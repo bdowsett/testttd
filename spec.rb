@@ -45,7 +45,15 @@ end
     end
 
   
-    describe "#full_name_with_middle_initial"
-  
-    describe "#initials"
-  end
+    describe "#full_name_with_middle_initial" do
+        it "Method should return a full name with a middle initial." do
+          person = Person.new(first_name: "Ben", middle_name: "Robert", last_name: "Dowsett")
+          expect(person.full_name_with_middle_initial).to eq("Ben R Dowsett")
+    end
+      it "If the middle name is missing, there shouldnt be extra spaces or a period" do 
+        person = Person.new(first_name: "Ben", last_name: "Dowsett")
+        expect(person.full_name_with_middle_initial).to eq("Ben Dowsett") 
+      end 
+    end
+end 
+   #describe "#initials"
